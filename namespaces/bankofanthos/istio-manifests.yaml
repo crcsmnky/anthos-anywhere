@@ -23,16 +23,16 @@ spec:
   gateways:
   - frontend-gateway
   http:
-  - match:
-    - uri:
-        prefix: /shop
-    rewrite:
-      uri: /
-    route:
-    - destination:
-        host: frontend.onlineboutique.svc.cluster.local
-        port:
-          number: 80
+  # - match:
+  #   - uri:
+  #       prefix: /shop
+  #   rewrite:
+  #     uri: /
+  #   route:
+  #   - destination:
+  #       host: frontend.onlineboutique.svc.cluster.local
+  #       port:
+  #         number: 80
   - match:
     - uri:
         prefix: /
