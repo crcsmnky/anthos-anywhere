@@ -33,11 +33,11 @@ spec:
         host: frontend.onlineboutique.svc.cluster.local
         port:
           number: 80
-  # - match:
-  #   - uri:
-  #       prefix: /
-  #   route:
-  #   - destination:
-  #       host: frontend.bankofanthos.svc.cluster.local
-  #       port:
-  #         number: 80
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: frontend.bankofanthos.svc.cluster.local
+        port:
+          number: 80
