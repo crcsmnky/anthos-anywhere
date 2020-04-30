@@ -48,6 +48,9 @@ metadata:
   name: dr-transactionhistory
 spec:
   host: transactionhistory
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
   subsets:
   - labels:
       version: v1
