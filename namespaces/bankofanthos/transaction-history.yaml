@@ -123,7 +123,7 @@ spec:
         - name: JVM_OPTS
           value: "-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap"
         - name: EXTRA_LATENCY_MILLIS
-          value: "1000"
+          value: "500"
         envFrom:
         - configMapRef:
             name: environment-config
