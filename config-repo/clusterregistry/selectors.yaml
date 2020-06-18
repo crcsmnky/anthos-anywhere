@@ -1,0 +1,17 @@
+apiVersion: configmanagement.gke.io/v1
+kind: ClusterSelector
+metadata:
+  name: anthos-gcp
+spec:
+  selector:
+    matchLabels:
+      environment: gcp
+---
+apiVersion: configmanagement.gke.io/v1
+kind: ClusterSelector
+metadata:
+  name: anthos-onprem
+spec:
+  selector:
+    matchLabels:
+      environment: onprem
