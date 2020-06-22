@@ -4,25 +4,25 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: crm-bank-of-anthos
+    app: crm
     migrate-for-anthos-type: workload
-  name: crm-bank-of-anthos
+  name: crm
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: crm-bank-of-anthos
+      app: crm
       migrate-for-anthos-type: workload
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: crm-bank-of-anthos
+        app: crm
         migrate-for-anthos-type: workload
     spec:
       containers:
       - image: gcr.io/migrate-82-731/crm-bank-of-anthos:v1.0.0
-        name: crm-bank-of-anthos
+        name: crm
         ports:
         - containerPort: 7001
         readinessProbe:
@@ -47,11 +47,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: bank-of-anthos-crm
+  name: crmservice
 spec:
   type: ClusterIP
   selector:
-    app: crm-bank-of-anthos
+    app: crm
   ports:
   - name: http
     port: 7001
