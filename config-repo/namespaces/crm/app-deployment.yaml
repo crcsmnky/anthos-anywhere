@@ -51,7 +51,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: bank-of-anthos-crm
+    app: crm-bank-of-anthos
   ports:
   - name: http
     port: 7001
