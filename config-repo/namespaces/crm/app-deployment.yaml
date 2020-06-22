@@ -21,7 +21,7 @@ spec:
         migrate-for-anthos-type: workload
     spec:
       containers:
-      - image: gcr.io/migrate-82-731/crm-bank-of-anthos:1.0
+      - image: gcr.io/migrate-82-731/crm-bank-of-anthos:v1.0.0
         name: crm-bank-of-anthos
         ports:
         - containerPort: 7001
