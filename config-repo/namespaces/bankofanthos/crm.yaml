@@ -21,25 +21,25 @@ spec:
         migrate-for-anthos-type: workload
     spec:
       containers:
-      - image: gcr.io/migrate-82-731/crm-bank-of-anthos:v1.0.0
+      - image: gcr.io/crcsmnky/crm-bank-of-anthos:latest
         name: crm
         ports:
-        - containerPort: 7001
-        readinessProbe:
-          exec:
-            command:
-            - /code/ready.sh
+        - containerPort: 80
+        # readinessProbe:
+        #   exec:
+        #     command:
+        #     - /code/ready.sh
         # resources: {}
-        securityContext:
-          privileged: true
-        volumeMounts:
-        - mountPath: /sys/fs/cgroup
-          name: cgroups
-      volumes:
-      - hostPath:
-          path: /sys/fs/cgroup
-          type: Directory
-        name: cgroups
+      #   securityContext:
+      #     privileged: true
+      #   volumeMounts:
+      #   - mountPath: /sys/fs/cgroup
+      #     name: cgroups
+      # volumes:
+      # - hostPath:
+      #     path: /sys/fs/cgroup
+      #     type: Directory
+      #   name: cgroups
 ---
 # Headless Service specification -
 # No load-balancing, and a single cluster internal IP, only reachable from within the cluster
@@ -55,4 +55,4 @@ spec:
   ports:
   - name: http
     port: 7001
-    targetPort: 7001
+    targetPort: 80
